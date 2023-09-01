@@ -1,0 +1,68 @@
+{% load static %}
+<html>
+<head>
+	<link rel="stylesheet" href="{% static 'css/side_navigation_bar.css' %}">
+	<link rel="stylesheet" href="{% static 'css/home.css' %}">
+	<lin rel="stylesheet" href="{% static  'css/country.css' %}">
+	{% block css %} {% endblock %}
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		*{font-size:40px; font-family:"Arial, Courier";}
+	</style>
+	<title> {% block title %} {% endblock %} </title>
+</head>
+
+<body>
+
+	<div id="navbar">
+		<a href="#"> Favourite </a>
+		<a href="#"> About us </a>
+		<a href="#"> FeedBack </a> 
+	</div><br>
+<center>
+	<div>
+		<div id="sidebar" class="sidenav">
+			<section>	
+			<br>
+			<a href="{% url 'home' %}" > World </a><br>
+			<a href="{% url 'argentina' %}" > Argentina </a><br>
+			<a href="#" > Australia </a><br>
+			<a href="#" > Brazil </a><br>
+			<a href="#" > Canada </a><br>
+			<a href="#" > China </a><br>
+			<a href="#" > France </a><br>
+			<a href="#" > Germany </a><br>							
+			<a href="#" > India </a><br>
+			<a href="#" > Ireland </a><br>
+			<a href="#" > Israel </a><br>
+			<a href="#" > New Zealand </a><br>
+			<a href="#" > Norway </a><br>
+			<a href="#" > Russia </a><br>
+			<a href="#" > Saudi Arabia </a><br>
+			<a href="#" > Spain </a><br>
+			<a href="#" > Sweden </a><br>
+			<a href="#" > UK </a><br>
+			<a href="#" > USA </a><br><br><br><br>
+			</section>
+		</div>
+	
+		<section>
+			{% block content %} {% endblock %}
+		</section>
+	</div>
+	
+	
+</center>
+	
+	<center>
+		<div id="footer">
+			<footer class="footer">
+				<p> Developer: Ashok Sharma | Rohit Shinde | Savio Johnson </p>
+				<p><a href="Phone: +91- 9892047311"> 9892047311 </a></p>
+				<p> Developed Using: Django FrameWork, HTML, CSS, BootStrap </p>
+			</footer>
+		</div>
+	</center>
+</body>
+</html>

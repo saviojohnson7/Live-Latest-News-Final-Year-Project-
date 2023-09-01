@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} News API {% endblock %}
+
+{% block content %} 
+	
+	<div id="click_here">
+		<h1>To see specific Publisher news -- <a href="{% url 'news' %}">Click Here</a><hr>
+	</div>
+	
+
+	<div id="world_news" value="google-news">
+		<h1> World News </h1><hr>
+		<div id="news">
+		{% for m in msg %}
+			<h2 style="width:70%; height:auto;" > {{ m.title }} </h2>
+			<h2> <a href="{{ m.url }}"> Read More </a> </h2>
+			<img src={{ m.urlToImage }} style="width:50%; height:auto; "></img>
+			<hr>
+		{% endfor %}
+		</div>
+		
+	</div>
+
+{% endblock %}

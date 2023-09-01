@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Argentina {% endblock %}
+
+{% block content %}
+<div id="argentina">
+
+	<h1> Argentina News </h1><hr>
+	<form>
+		<select name="src">
+			<option value="la-nacion"> La Nación </option>
+			<option value="la-gaceta"> La Gaceta </option>
+			<option value="google-news-ar"> Google News (Argentina) </option>
+		</select><br><br>
+		<input type="submit" value="Search" name="btn">
+	</form>
+
+	<div id="argentina_news" >
+		<h1> {{ src }} </h1>
+			<hr>
+		{% for m in msg %}
+			<h2 style="width:70%; height:auto;"> {{ m.title }} </h2>
+			<h2> <a href="{{ m.url }}"> READ MORE </a> </h2>
+			<img src={{ m.urlToImage }} style="width:50%; height:auto;"> </img>
+		{% endfor %}
+	</div>
+
+</div>
+	
+{% endblock %}
